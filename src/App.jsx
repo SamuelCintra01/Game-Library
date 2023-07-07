@@ -6,7 +6,7 @@ export function App() {
   return (
     <div id="app">
       <h1>Biblioteca de jogos</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Título:</label>
           <input type="text" name="title" id="title" />
@@ -15,9 +15,7 @@ export function App() {
           <label htmlFor="cover">Capa:</label>
           <input type="text" name="cover" id="cover" />
         </div>
-        <button type="submit" onClick={handleSubmit}>
-          Adicionar à biblioteca
-        </button>
+        <button type="submit">Adicionar à biblioteca</button>
       </form>
     </div>
   );
