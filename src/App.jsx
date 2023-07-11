@@ -11,6 +11,10 @@ export function App() {
     setGames((state) => [...state, game]);
   };
 
+  const removeGame = (id) => {
+    setGames((state) => state.filter((game) => game.id !== id));
+  };
+
   const handleSubmit = (ev) => {
     ev.preventDefault();
     addGame({ title, cover });
@@ -50,7 +54,7 @@ export function App() {
             <img src={game.cover} alt={game.cover} />
             <div>
               <h2>{game.title}</h2>
-              <button>Remover</button>
+              <button onClick={() => removeGame(game.id)}>Remover</button>
             </div>
           </div>
         ))}
